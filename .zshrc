@@ -153,7 +153,7 @@ export PATH=/home/aman/.local/bin:$PATH
 
 editZsh(){
     updateYadm
-    vim ~/.zshrc
+    nano ~/.zshrc
     source ~/.zshrc
     backupToDrive ~/.zshrc
     echo "New .zshrc sourced."
