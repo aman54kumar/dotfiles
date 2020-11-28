@@ -143,3 +143,31 @@ source $ZSH/oh-my-zsh.sh
 
 #
 export PATH=/home/aman/.local/bin:$PATH
+
+# useful commands custom function (https://dev.to/manan30/what-is-the-best-zshrc-config-you-have-seen-14id)
+  sourceZsh(){
+    source ~/.zshrc
+    backupToDrive ~/.zshrc
+    echo "New .zshrc sourced."
+}
+
+editZsh(){
+    updateYadm
+    vim ~/.zshrc
+    source ~/.zshrc
+    backupToDrive ~/.zshrc
+    echo "New .zshrc sourced."
+}
+
+updateYadm() {
+    yadm pull
+}
+
+backupToDrive(){
+    yadm add ~/.zshrc
+    yadm commit -m "updated .zshrc"
+    yadm push
+    echo "New .zshrc backed up to yadm."
+}
+
+	
