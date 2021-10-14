@@ -82,7 +82,6 @@ plugins=(
 	command-not-found
 	common-aliases
 	compleat
-	django
 	docker
 	docker-compose
 	docker-machine
@@ -94,7 +93,6 @@ plugins=(
 	httpie
 	node
 	npm
-	npx
 	nvm
 	pip
 #	pipenv
@@ -143,6 +141,11 @@ source $ZSH/oh-my-zsh.sh
 
 #
 export PATH=/home/aman/.local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+
+#pipenv
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
 
 # useful commands custom function (https://dev.to/manan30/what-is-the-best-zshrc-config-you-have-seen-14id)
   sourceZsh(){
@@ -170,4 +173,4 @@ backupToDrive(){
     echo "New .zshrc backed up to yadm."
 }
 
-	
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
