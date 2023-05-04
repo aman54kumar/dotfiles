@@ -1,16 +1,23 @@
 # useful commands custom function (https://dev.to/manan30/what-is-the-best-zshrc-config-you-have-seen-14id)
   sourceZsh(){
-    echo "sourceZsh"
     source ~/.zshrc
-    backupToDrive
+    if [ "$1" = "2" ]; then
+    echo "updating all files"
+        backupToDrive
+    elif [ "$1" = "1" ] || [ -z "$1" ]; then
+    echo "updating zshrc files"
+        backupToDrive ~/.zshrc
+    else
+        echo "Invalid argument"
+        return 1
+    fi
     echo "New .zshrc sourced."
 }
 
 editZsh(){
     updateYadm
-    nano ~/.zshrc
-    source ~/.zshrc
-    backupToDrive ~/.zshrc
+    code ~/.zshrc
+    sourceZsh "$@"
     echo "New .zshrc sourced."
 }
 
@@ -19,7 +26,11 @@ updateYadm() {
 }
 
 backupToDrive(){
-    yadm add ~/.zshrc ~/.utilScripts ~/.hyper.js 
+    if [ "$#" -eq 1 ]; then
+        yadm add "$1"
+    else
+        yadm add ~/.zshrc ~/.utilScripts ~/.hyper.js 
+    fi
     yadm commit -m "updated .zshrc"
     yadm push
     echo "New .zshrc backed up to yadm."
