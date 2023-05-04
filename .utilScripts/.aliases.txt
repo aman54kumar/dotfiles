@@ -1,0 +1,13 @@
+# zsh
+alias zc="code ~/.zshrc"
+alias zs="exec zsh"
+
+# terminal
+alias cls="clear"
+alias python="python3"
+alias pip="pip3"
+
+# file/folder
+alias md="source ~/.utilScripts/create_dir.sh"
+alias mf="source ~/.utilScripts/create_file.sh"
+alias pj="cd $Home/aman/Projects"

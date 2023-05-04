@@ -120,13 +120,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zc="code ~/.zshrc"
-alias zs="source ~/.zshrc"
-alias cls="clear"
-alias python="python3"
-alias pip="pip3"
-alias md="source ~/create_dir.sh"
-alias pj="cd $Home/aman/Projects"
+
 
 
 
@@ -140,33 +134,11 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U promptinit; 
 promptinit prompt pure
 
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# useful commands custom function (https://dev.to/manan30/what-is-the-best-zshrc-config-you-have-seen-14id)
-  sourceZsh(){
-    source ~/.zshrc
-    backupToDrive ~/.zshrc
-    echo "New .zshrc sourced."
-}
 
-editZsh(){
-    updateYadm
-    nano ~/.zshrc
-    source ~/.zshrc
-    backupToDrive ~/.zshrc
-    echo "New .zshrc sourced."
-}
-
-updateYadm() {
-    yadm pull
-}
-
-backupToDrive(){
-    yadm add ~/.zshrc
-    yadm commit -m "updated .zshrc"
-    yadm push
-    echo "New .zshrc backed up to yadm."
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source ~/.utilScripts/.myUtils.sh
