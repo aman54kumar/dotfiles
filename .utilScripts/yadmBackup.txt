@@ -5,7 +5,7 @@
     echo "updating all files"
         backupToDrive
     elif [ "$1" = "1" ] || [ -z "$1" ]; then
-    echo "updating zshrc files"
+    echo "updating .zshrc file"
         backupToDrive ~/.zshrc
     else
         echo "Invalid argument"
