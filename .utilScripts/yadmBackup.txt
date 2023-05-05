@@ -18,7 +18,7 @@ updateYadm() {
 }
 
 backupToDrive(){
-    yadm add ~/.zshrc ~/.utilScripts ~/.hyper.js 
+    yadm add ~/.zshrc ~/.utilScripts ~/.hyper.js ~/.p10k.zsh
     yadm commit -m "updated .zshrc"
     yadm push
     echo "New .zshrc backed up to yadm."
